@@ -1,0 +1,36 @@
+th {
+    background-color: red;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+caption {
+    font-weight: bold;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 4px;
+    padding: 10px;
+
+}
+.table-caption-div {
+    display: inline-block;
+}
+
+tbody {
+    border: 2px grey;
+    border-spacing: 4px;
+}
+p {
+    position: relative;
+    left: 60px;
+}
+

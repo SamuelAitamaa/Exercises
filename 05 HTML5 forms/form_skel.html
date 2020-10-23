@@ -6,52 +6,63 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Demonstrating HTML forms</title>
+		<link rel="stylesheet" type="text/css" href="form.css">
 	</head>
 	
 	<body>
 		<h1>Turnitin</h1>
 		<form  lang="fi" action="">
 			<div>
-				Name: <input type="text" name="studentname"/>
-			</div>
-			<div>
-				Student id: <input type="text" name="id"  />
-			</div>
-			<div>
-				Email:
-				<!--
-				Make an input named "email"
-				-->
-			</div>
-			<div>
-				Assignment:
-				<!--
-				Make an input named "assignment"
-				-->
-				
+
+				<form action="">
+				<fieldset id="info">
+					<legend id ="infoHeader">Student information</legend>
+					<label>Name: </label><input type="text" name="studentname" placeholder="First name"  pattern="[a-zA-Z0-9]"/><br>
+					<label>Student id: </label><input type="number" name="id" placeholder="123456"  pattern="[0-9]{6}" /><br>
+					<label>Email: </label> <input type="email" name="email" placeholder="student@university.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  /><br>
+					<label>Assignment: </label> <input type="text" name="assignment" placeholder="Assignment" pattern="[a-zA-Z0-9]"  /> <br>
+					<label>Code: </label> <input type="number" name="code" placeholder="123456" pattern="[0-9]{6}"  />
+				</fieldset>
+			</form>
 			</div>
 
 			<div>
-				Code:
-				<!--
-				Make an input named "code" which is a text area to put student's code into.
-				-->
-				
-			</div>
-			<div>
-				Cheat:
+				<form action="">
+				<fieldset>
+					<legend>Cheat</legend>
+				<input type="checkbox" name="cheat" value="on">Cheats on
+				<input type="checkbox" name="cheat" value="off">Cheats off
+				</fieldset>
+				</form>
 			<!--
 				Make an input named "cheat" which is a check box the student must check.
 			-->
 			</div>
 			<div>
-				Pay:
+				<form action="">
+				<fieldset>
+					<legend>Credit Card</legend>
+					<label><input type="radio" name="card" value="Visa">Visa</label><br>
+					<label><input type="radio" name="card" value="Paypal">Paypal</label>
+					<label><input type="radio" name="card" value="MCard">MasterCard</label>
+				</fieldset>
+				</form>
 			<!--
 				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
 			-->
 			</div>
 			<div>
-				Score:
+				<fieldset>
+					<legend>Score</legend>
+				<select name="score">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+
+			</select>
+				</fieldset>
 			<!--
 				Make an input named "score" which is a list of choices for the score 
 			-->

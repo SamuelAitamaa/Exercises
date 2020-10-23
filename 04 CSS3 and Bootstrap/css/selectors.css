@@ -17,3 +17,6 @@ h1.alert {
 p#unique {
     font-size: 0.8em;
 }
+p#unique, p:not([class]) {
+    text-decoration: underline;
+}

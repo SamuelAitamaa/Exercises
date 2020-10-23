@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, Verdana, sans-serif;
+    text-align: center;
+}
+h1{
+    font-size: 6em;
+    font-weight: normal;
+    margin-bottom: 0.3em;
+}
+img{
+    border: 3px solid #2B81AF;
+    width: 150px;
+}
+figcaption{
+    margin: 10px 0 60px 0;
+    font-weight: bold;
+}
+h2{
+    font-weight: normal;
+    font-size: 3em;
+    margin: 0;
+}
+p{
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: normal;
+}
+div{
+    width: 18em;
+    padding: 1.3em;
+    margin: auto;
+}
+#blueberry{
+    border-top: 1px solid black;
+    background-color: #CCFFFF;
+}
+#cloudberry{
+    border-top: 1px solid black;
+    background-color: #FFFFCC;
+}
+#lingonberry {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: #FF9999;
+}
