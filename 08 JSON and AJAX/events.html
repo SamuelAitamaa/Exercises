@@ -10,6 +10,8 @@
   </style>
   <script>
 window.onload = function() {
+    var onMouseTest = document.getElementById("mydiv");
+    onMouseTest.onmouseover = mouseOver;
 	var div = document.getElementById("clickme");
 	if (div.addEventListener) {
 		div.addEventListener("click", handleClick, false);
@@ -29,9 +31,20 @@ function handleClick(e) {
 	alert("You clicked on " + target.id);
 }
 
+
+function mouseOver() {
+  alert('You hovered ' + this.id)
+};
+U.addEvent(div, 'onmousemove', mouseOver());
+
+
+
+
+
   </script>
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<div id="mydiv" style="border:1px solid red">I am a DIV! Hover me.</div>
 </body>
 </html>

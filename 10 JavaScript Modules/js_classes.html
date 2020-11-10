@@ -32,15 +32,69 @@ function Coffee(roast, ounces) {
 		return msg;
 	};
 }
+/*First, add a Tea(type, ounces) constructor function to the js_classes.html JavaScript.
+Add properties for type and ounces
+Add methods: getSteepTime() and order() , and use appropriate code within them*/
+function Tea(type, ounces) {
+    this.type = type;
+    this.ounces = ounces;
+    this.getSize = function() {
+        if (this.ounces === 8) {
+            return "small";
+        } else if (this.ounces === 12) {
+            return "medium";
+        } else if (this.ounces === 16) {
+            return "large";
+        }
+    };
+    this.getSteepTime = function() {
+        if (this.ounces === 8) {
+            return "3 minutes";
+        } else if (this.ounces === 12) {
+            return "4 minutes";
+        } else if (this.ounces === 16) {
+            return "5 minutes";
+        }
+    };
+    this.order = function() {
+        var msg;
+        switch (this.getSize()) {
+            case "small":
+            case "medium":
+            case "large":
+                msg = "You've ordered a " + this.getSize() + " " + this.type + ". It has to be steeped for " + this.getSteepTime();
+                break;
+            default:
+                msg = "We don't have a " + this.type + " in that size!";
+                break;
+        }
+        return msg;
+    };
+}
+Coffee.prototype.sip = function() {
+    console.log("Hmm, tasty");
+}
+Tea.prototype.sip = function() {
+    console.log("Hmm, tasty");
+}
+
 
 var coffee = new Coffee("House Blend", 12);
 console.log(coffee.order());
+coffee.sip()
 
 var darkRoast = new Coffee("Dark Roast", 16);
 console.log(darkRoast.order());
 
 var specialBlend = new Coffee("Special Blend", 200);
 console.log(specialBlend.order());
+
+var greenTea = new Tea("Green tea", 16);
+console.log(greenTea.order());
+greenTea.sip()
+
+var blackTea = new Tea("Black tea", 8);
+console.log(blackTea.order());
 
 </script>
 </head>

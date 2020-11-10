@@ -1,25 +1,50 @@
 <!doctype html>
 <html>
+
+</head>
+<body>
+<div id='output1'></div>
+<div id='output2'></div>
+</body>
 <head>
   <meta charset="utf-8">
   <title> JSON </title>
   <script>
 
-var fidoString = '{ "name": "Fido", "breed": "Mixed", "weight": 38 }';
-var fido = JSON.parse(fidoString);
-console.log("We have made a dog out of a string! " + fido.name);
+    var fidoString = '{ "name": "Fido", "breed": "Mixed", "weight": 38 }';
+    var fido = JSON.parse(fidoString);
+    var output = document.getElementById('output1');
+    var output2 = document.getElementById('output2');
+
+    console.log("We have made a dog out of a string! " + fido.name);
 
 
-var fido2 = {
-	name: "Fido",
-	breed: "Mixed",
-	weight: 38
-};
-var fidoString = JSON.stringify(fido2);
-console.log("We made a string from a dog! " + fidoString);
+    var fido2 = {
+      name: "Fido",
+      breed: "Mixed",
+      weight: 38
+    };
+    var employee = {
+      name: {
+        first: "Colin",
+        second: "Stephen" },
+      title: "Assistant Lecturer"
+    }
+
+    var fidoString = JSON.stringify(fido2);
+
+    console.log("We made a string from a dog! " + fidoString);
+
+    var myString = JSON.stringify(employee);
+    console.log(myString)
+
+    output.innerHTML =  myString;
+
+    var Obj = JSON.parse(myString);
+    var employeeName = Obj.name.first + " " + Obj.name.second;
+
+    output2.innerHTML =  employeeName;
+
 
   </script>
-</head>
-<body>
-</body>
 </html>

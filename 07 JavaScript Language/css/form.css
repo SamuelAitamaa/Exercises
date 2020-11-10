@@ -85,6 +85,18 @@ color:#000000;
 font-size:12px;
 font-weight:bold;
 }
+#remove{
+    clear:both;
+    margin-left:150px;
+    width:125px;
+    height:31px;
+    background:#F1F2D8;
+    text-align:center;
+    line-height:20px;
+    color:#000000;
+    font-size:12px;
+    font-weight:bold;
+}
 #output {
 	clear:both;
 	margin-bottom: 10px;
