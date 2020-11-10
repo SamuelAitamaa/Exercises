@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+    background-color: #dddddd;
+}
+
+h1, h2 {
+    color: blue;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 4.0em;
+}
+
+ul, ol {
+    font-size: 0.8em;
+    border: 2px solid black;
+    text-indent: 10px;
+}
+
+li {
+    color: darkgrey;
+    text-indent: 10px;
+}
+p.copyright_notice {
+    font-size: 0.8em;
+}
+
+p::first-letter {
+    font-size:8em;
+}
+
+p::first-line {
+    font-weight: bold;
+}
+
+figcaption {
+    font-weight: bold;
+    font-size: 15px;
+}
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
