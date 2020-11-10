@@ -9,4 +9,3 @@ var myModule = (function () {
 test('Module Pattern', function() {
 	equal(myModule.hello(), 'hello world', 'Module works!');
 });
-
