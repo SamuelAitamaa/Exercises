@@ -22,11 +22,11 @@ let con = mysql.createPool({
 const query = util.promisify(con.query).bind(con);
 app.get('/', function (req, res) {
 
-    con.getConnection(function (err) {
+    con.getConnection(function (err, connection) {
         if (err) throw err;
         con.query("SELECT * FROM location", function (err, result, fields) {
             if (err) throw err;
-            con.release();
+            connection.release();
             console.log(result);
             let values = JSON.parse(JSON.stringify(result));
             console.log(values);

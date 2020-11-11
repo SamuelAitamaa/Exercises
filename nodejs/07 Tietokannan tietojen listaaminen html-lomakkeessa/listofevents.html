@@ -60,6 +60,7 @@
             xmlhttp.onreadystatechange = function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     json = JSON.parse(xmlhttp.responseText);
+                    console.log(json);
                     //myFunction(resultArr);
                     //document.getElementById("locationInfo").innerHTML = xmlhttp.responseText;
                     if (json.numOfRows> 0){ // something found
@@ -73,7 +74,7 @@
 
                 }
             };
-            xmlhttp.open("GET", "http://localhost:8081/api/events?start=" + startdate+"&end="+enddate, true);
+            xmlhttp.open("GET", "http://localhost:8080/api/events?start=" + startdate+"&end="+enddate, true);
             xmlhttp.send();
         }
     }
@@ -102,7 +103,8 @@
             listElement.appendChild(nestedElement);
             unNestedElement = document.createElement("li");
             unNestedElement.setAttribute("class", "del");
-            string = json.rows[i].Type+", "+json.rows[i].Date+", "+json.rows[i].Time+", "+json.rows[i].Location_place_name;
+            string = json.rows[i].Type+", "+json.rows[i].Date+ ", "+json.rows[i].Location_name;
+            //string = json.rows[i].event_date.Date + ", " + json.rows[i].event.Name + json.rows[i].event.Type + ", " + Location.Location_name;
             unNestedElement.innerHTML = string;
             nestedElement.appendChild(unNestedElement);
         }
