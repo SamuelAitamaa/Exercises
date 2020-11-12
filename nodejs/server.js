@@ -3,6 +3,11 @@ var app = express();
 const util = require('util');
 var url = require('url');
 var mysql = require('mysql');
+let bodyParser = require('body-parser');
+
+var urlencodedParser = bodyParser.urlencoded({extended: false});
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 
 app.use((req, res, next) => {
@@ -90,6 +95,21 @@ app.get("/api/location", function (req, res) {
             //conn.end();
         }
     })()
+});
+
+app.post("/api/event", urlencodedParser, function(req, res) {
+    console.log("Got a POST request for the homepage");
+
+    console.log("body: %j", req.body);
+
+    var jsonObj = req.body;
+    console.log("Arvo: " + jsonObj.eventName);
+
+    if (jsonObj.eventLocation>-1) {
+        var sql = "INSERT INTO event (Name, Type, Time, Location_Location_id)"
+            + " VALUES ( ?, ?, ?, ?)"
+    }
+
 });
 
 

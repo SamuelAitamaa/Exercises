@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Exercises</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <ul id="list">
+
+        <li>Sample</li>
+
+    </ul>
+
+    <input v-model="value" placeholder="Syötä seuraava"/>
+    <button v-on:click="add">Lisää luetteloon</button>
+    <button v-on:click="Delete" id="delete">Delete</button>
+
+
+</div>
+
+</body>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            value: '',
+        },
+        methods: {
+            add: function () {
+                let ul = document.getElementById("list");
+                let li = document.createElement("li");
+                li.appendChild(document.createTextNode(this.value));
+                ul.appendChild(li);
+            },
+
+            Delete: function () {
+                let ul = document.getElementById("list");
+                ul.firstChild.remove();
+            },
+        }
+    })
+</script>
+</html>

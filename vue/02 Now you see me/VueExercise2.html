@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Exercises</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <span v-if="seen">Now you see me</span>
+    <button v-on:click="Vaihda">Näytä/Piilota</button>
+</div>
+
+</body>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            seen: true
+        },
+        methods: {
+            Vaihda: function () {
+                this.seen = !this.seen;
+            }
+        }
+    })
+</script>
+</html>

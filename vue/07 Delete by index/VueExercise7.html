@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Exercises</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <ul id="list">
+
+        <li v-for="(value, index) in values">
+            {{ value.text }}<button v-on:click="Delete(index)">Delete</button>
+        </li>
+
+    </ul>
+
+    <input v-model="value" placeholder="Syötä seuraava"/>
+    <button v-on:click="add">Lisää luetteloon</button>
+
+
+</div>
+
+</body>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            value: '',
+            values: [
+
+            ]
+        },
+        methods: {
+            add: function () {
+                this.values.push({text: this.value});
+            },
+
+            Delete: function (index) {
+                this.values.splice(index, 1);
+            },
+        }
+    })
+</script>
+</html>

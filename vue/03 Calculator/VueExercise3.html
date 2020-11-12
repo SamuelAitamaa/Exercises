@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Exercises</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <span>{{value.toFixed(2)}}</span>
+    <button v-on:click="minus">-</button>
+    <button v-on:click="zero">0</button>
+    <button v-on:click="plus">+</button>
+</div>
+
+</body>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            value: 0
+        },
+        methods: {
+            minus: function () {
+                this.value -= 0.1;
+            },
+
+            plus: function () {
+                this.value += 0.1;
+            },
+
+            zero: function () {
+                this.value = 0;
+            }
+        }
+    })
+</script>
+</html>
