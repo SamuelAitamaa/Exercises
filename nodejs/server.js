@@ -97,17 +97,31 @@ app.get("/api/location", function (req, res) {
     })()
 });
 
+// JSON tiedot Postmanilla
 app.post("/api/event", urlencodedParser, function(req, res) {
     console.log("Got a POST request for the homepage");
 
     console.log("body: %j", req.body);
 
     var jsonObj = req.body;
-    console.log("Arvo: " + jsonObj.eventName);
+    console.log("Tapahtuman nimi: " + jsonObj.eventName);
 
-    if (jsonObj.eventLocation>-1) {
-        var sql = "INSERT INTO event (Name, Type, Time, Location_Location_id)"
-            + " VALUES ( ?, ?, ?, ?)"
+    if (jsonObj.eventLocation > 0) {
+            (async() => {
+                try {
+                    var sql = "INSERT INTO event (Name, Type, Location_Location_id) VALUES (?, ?, ?)";
+                    const result = await query(sql, [jsonObj.eventName, jsonObj.eventType, jsonObj.eventLocation]);
+
+                    let insertedId = result.insertId;
+                    sql = "INSERT INTO event_date (Date, Event_id) VALUES (?, ?)";
+                    const resultEvent_id = await query(sql, [jsonObj.eventDate, insertedId]);
+
+                    await query(sql,[jsonObj.eventDate, insertedId]);
+                    res.send('POST succesful ' + req.body);
+                } catch(err) {
+                    console.log("Error: " + err);
+                }
+            })()
     }
 
 });
